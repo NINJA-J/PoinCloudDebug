@@ -27,74 +27,45 @@
 #include "GetBoundaryOriginal.hpp"
 #include "ExtractPlanes.hpp"
 #include "Filters.hpp"
-//#include <glad/glad.h>
-//#include <glfw3.h>
-//#include <GL/glew.h>
 
 using namespace std;
 
-double xMax,yMax,zMax;
-double xMin,yMin,zMin;
-double xDis,yDis,zDis;
+void savePCDFile(pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud, string fName){
+    pcl::io::savePCDFile( "./PCD/"     + fName + ".pcd", *cloud, true);
+    ofstream fout("./PCD2TXT/" + fName + ".txt");
+    vector<pcl::PointXYZ>::iterator iter = cloud->points.begin();
+    while( iter != cloud->points.end() ){
+        fout << iter->x << " " << iter->y << " " << iter->z << endl;
+        iter ++;
+    }
+    cout << "File " + fName + "PCD & TXT mode saved" << endl;
+}
 
 pcl::PointCloud<pcl::PointXYZ>::Ptr myPc(new pcl::PointCloud<pcl::PointXYZ>);
-//void inits(){
-//    glfwInit();
-//    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-//    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-//    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-//    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-//    cout<<"To Create Window"<<endl;
-//    window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
-//    cout<<"Window Created"<<endl;
-//    if(window == NULL){
-//        cout<<"Failed To Open A Window"<<endl;
-//        glfwTerminate();
-//        exit(0);
-//    }
-//    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-//        cout << "Failed to initialize GLAD" << endl;
-//        exit(0);
-//    }
-//    glViewport(0, 0, 800, 600);
-//}
+pcl::PointCloud<pcl::PointXYZ>::Ptr VGF_Cloud;
+pcl::PointCloud<pcl::PointXYZ>::Ptr GF_Cloud;
+pcl::PointCloud<pcl::PointXYZ>::Ptr VGF_GF_Cloud;
 
-//void glfwMyDraw(){
-//    glClearColor(1, 0, 1, 0);
-//    glPointSize(1);
-//    glfwSwapBuffers(window);
-//    glfwPollEvents();
-//}
+vector<int> indices;
 
 int main(int argc, const char * argv[]) {
-//    pcl::PointCloud<pcl::Boundary> bound;
-//    pcl::PointCloud<pcl::PointXYZ>::Ptr boundary;
-    pcl::PointCloud<pcl::PointXYZ>::Ptr bCloud;
-    pcl::PointCloud<pcl::PointXYZ>::Ptr vCloud;
     
-    pcl::io::loadPCDFile("ArchOrigin.pcd", *myPc);
+    pcl::io::loadPCDFile("PCD/ArchOrigin.pcd", *myPc);
+    savePCDFile( myPc, "ArchOrigin" );
     cout << "Source PCD File Loaded" << endl;
     
-    myPc = voxelGridFilter(myPc, 0.01, 0.01, 0.01);
-    pcl::io::savePCDFile("ArchVoxelGridFiltered.pcd", *myPc);
-    cout << "Voxel Grid Filtered And Saved" << endl;
+    VGF_Cloud = voxelGridFilter(myPc, 0.01, 0.01, 0.01);
+    cout << "原始点云-栅格过滤 结束" << endl;
     
-    bCloud = bilateralFilter(myPc, 5, 0.03);
-    pcl::io::savePCDFile("ArchBilaterFiltered_5_0.03.pcd", *bCloud);
-    cout << "Bilateral Filtered And Saved" << endl;
+    GF_Cloud = gaussianKernelFilter(myPc, 4, 3);
+    cout << "原始点云-高斯滤波 结束" << endl;
     
-    bCloud = bilateralFilter(myPc, 5, 0.001);
-    pcl::io::savePCDFile("ArchBilaterFiltered_5_0.001.pcd", *bCloud);
-    cout << "Bilateral Filtered And Saved" << endl;
+    VGF_GF_Cloud = gaussianKernelFilter(VGF_Cloud, 4, 3);
+    cout << "原始点云-栅格过滤-高斯滤波 结束" << endl;
     
-//    vCloud = voxelGridFilter(myPc, 0.001, 0.001, 0.001);
-//    pcl::io::savePCDFile("ArchVoxelGridFiltered.pcd", *vCloud);
-//    cout << "Voxel Grid Filtered And Saved" << endl;
-    
-//    vCloud = voxelGridFilter(bCloud, 0.001, 0.001, 0.001);
-//    pcl::io::savePCDFile("ArchBilaterFilteredByVolexGrid.pcd", *vCloud);
-//    cout << "Voxel Grid After Bilateral Filtered And Saved" << endl;
-    
+    savePCDFile( VGF_Cloud,    "ArchVGF_0.01_0.01_0.01" );
+    savePCDFile( GF_Cloud,     "ArchGF_4_3" );
+    savePCDFile( VGF_GF_Cloud, "ArchVGF_GF_4_3");
     return 0;
     
 //    myPc = bCloud;
@@ -102,23 +73,9 @@ int main(int argc, const char * argv[]) {
 //    bound = getBoundary(myPc, 20, M_PI/2);
 //    boundary= extractBoundary(myPc,bound);
 //    pcl::io::savePCDFile("ArchBoundariesText2.pcd", *boundary);
-//
-//    bound = getBoundary(myPc, 20, M_PI/3);
-//    boundary= extractBoundary(myPc,bound);
-//    pcl::io::savePCDFile("ArchBoundariesText3.pcd", *boundary);
-//
-//    bound = getBoundary(myPc, 20, M_PI/4);
-//    boundary= extractBoundary(myPc,bound);
-//    pcl::io::savePCDFile("ArchBoundariesText4.pcd", *boundary);
     
 //    vector<ExtractInfo> infos = extractPlanes( myPc, 0.3, 5, 0.002 );
 //    saveExtractPlanes( infos, "PlaneGroup2", "txt" );
-    
-//    inits();
-//    while(!glfwWindowShouldClose(window)) {
-//        glfwMyDraw();
-//    }
-//    glfwTerminate();
    
     return 0;
 }

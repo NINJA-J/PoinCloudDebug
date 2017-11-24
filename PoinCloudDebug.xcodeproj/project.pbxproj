@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		C95192D81FBC6EE500B4FF7D /* GetBoundaryOriginal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C95192D61FBC6EE500B4FF7D /* GetBoundaryOriginal.cpp */; };
 		C970931C1FB2AD2A001A2EE0 /* libvtkCommonCore-8.0.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C97093011FB2AD28001A2EE0 /* libvtkCommonCore-8.0.1.dylib */; };
-		C9A0B8ED1FB7698A0099F336 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A0B8EC1FB7698A0099F336 /* libglfw.3.2.dylib */; };
-		C9A0B8EF1FB781650099F336 /* glad.c in Sources */ = {isa = PBXBuildFile; fileRef = C9A0B8EE1FB781650099F336 /* glad.c */; };
 		C9A0B8F71FB820850099F336 /* libvtkGeovisCore-8.0.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A0B8F21FB820840099F336 /* libvtkGeovisCore-8.0.1.dylib */; };
 		C9A0B8F81FB820850099F336 /* libvtkFiltersCore-8.0.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A0B8F31FB820840099F336 /* libvtkFiltersCore-8.0.1.dylib */; };
 		C9A0B8F91FB820850099F336 /* libvtkImagingCore-8.0.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A0B8F41FB820840099F336 /* libvtkImagingCore-8.0.1.dylib */; };
@@ -271,7 +269,6 @@
 		C9A0BB561FB8490A0099F336 /* libpcl_tracking.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A0BB3E1FB849060099F336 /* libpcl_tracking.1.8.1.dylib */; };
 		C9A0BB571FB8490A0099F336 /* libpcl_features.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A0BB3F1FB849070099F336 /* libpcl_features.1.8.1.dylib */; };
 		C9A0BB581FB8490A0099F336 /* libpcl_visualization.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A0BB401FB849070099F336 /* libpcl_visualization.1.8.1.dylib */; };
-		C9A0BB591FB8490A0099F336 /* pkgconfig in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A0BB411FB849080099F336 /* pkgconfig */; };
 		C9A0BB5A1FB8490A0099F336 /* libpcl_simulation.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A0BB421FB849080099F336 /* libpcl_simulation.1.8.1.dylib */; };
 		C9A0BB5B1FB8490A0099F336 /* libpcl_outofcore.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A0BB431FB849080099F336 /* libpcl_outofcore.1.8.1.dylib */; };
 		C9A0BB5C1FB8490A0099F336 /* libpcl_simulation_io.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A0BB441FB849080099F336 /* libpcl_simulation_io.1.8.1.dylib */; };
@@ -294,7 +291,6 @@
 		C9C4947B1FB5C58500D869ED /* libpcl_kdtree.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C494651FB5C58400D869ED /* libpcl_kdtree.1.8.1.dylib */; };
 		C9C4947C1FB5C58500D869ED /* libpcl_io_ply.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C494661FB5C58400D869ED /* libpcl_io_ply.1.8.1.dylib */; };
 		C9C494801FB5C58500D869ED /* libpcl_io.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C4946A1FB5C58500D869ED /* libpcl_io.1.8.1.dylib */; };
-		C9C494D61FB5C62300D869ED /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C99A49721FB4415C00E358C0 /* GLUT.framework */; };
 		C9C494D81FB5C8E800D869ED /* libglut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C494D71FB5C8E800D869ED /* libglut.a */; };
 		C9C4979F1FB5F36500D869ED /* libboost_math_c99f.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C4971F1FB5F35800D869ED /* libboost_math_c99f.a */; };
 		C9C499161FB6F87900D869ED /* libboost_system-mt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C97092F91FB2ABDA001A2EE0 /* libboost_system-mt.a */; };
@@ -303,7 +299,6 @@
 		C9C4995C1FB739C300D869ED /* libvtkWrappingTools-8.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D6A1511FB045C2004145A3 /* libvtkWrappingTools-8.0.a */; };
 		C9C4995E1FB7486D00D869ED /* libpcl_common.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C4945D1FB5C58300D869ED /* libpcl_common.1.8.1.dylib */; };
 		C9C499E91FB749F400D869ED /* libpcl_visualization.1.8.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C97092FD1FB2AC88001A2EE0 /* libpcl_visualization.1.8.1.dylib */; };
-		C9C499EA1FB74F8000D869ED /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C99A49711FB4415C00E358C0 /* OpenGL.framework */; };
 		C9D6A1471FB02C29004145A3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9D6A1461FB02C29004145A3 /* main.cpp */; };
 		C9F498161FC44CD900D567A9 /* Filters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9F498141FC44CD900D567A9 /* Filters.cpp */; };
 /* End PBXBuildFile section */
@@ -357,7 +352,6 @@
 		C99A49711FB4415C00E358C0 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		C99A49721FB4415C00E358C0 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		C9A0B8EC1FB7698A0099F336 /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
-		C9A0B8EE1FB781650099F336 /* glad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = glad.c; path = ../../../../../../../usr/local/opt/glad/src/glad.c; sourceTree = "<group>"; };
 		C9A0B8F01FB81FEC0099F336 /* libvtkRenderingCore-8.0.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libvtkRenderingCore-8.0.1.dylib"; path = "../../../../../../usr/local/Cellar/vtk/8.0.1_1/lib/libvtkRenderingCore-8.0.1.dylib"; sourceTree = "<group>"; };
 		C9A0B8F21FB820840099F336 /* libvtkGeovisCore-8.0.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libvtkGeovisCore-8.0.1.dylib"; path = "../../../../../../usr/local/Cellar/vtk/8.0.1_1/lib/libvtkGeovisCore-8.0.1.dylib"; sourceTree = "<group>"; };
 		C9A0B8F31FB820840099F336 /* libvtkFiltersCore-8.0.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libvtkFiltersCore-8.0.1.dylib"; path = "../../../../../../usr/local/Cellar/vtk/8.0.1_1/lib/libvtkFiltersCore-8.0.1.dylib"; sourceTree = "<group>"; };
@@ -742,8 +736,6 @@
 		C9C494AA1FB5C5CB00D869ED /* libopencv_structured_light.3.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_structured_light.3.3.0.dylib; path = ../../../../../../usr/local/Cellar/opencv/3.3.0_3/lib/libopencv_structured_light.3.3.0.dylib; sourceTree = "<group>"; };
 		C9C494AB1FB5C5CB00D869ED /* libopencv_core.3.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.3.3.0.dylib; path = ../../../../../../usr/local/Cellar/opencv/3.3.0_3/lib/libopencv_core.3.3.0.dylib; sourceTree = "<group>"; };
 		C9C494D71FB5C8E800D869ED /* libglut.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglut.a; path = ../../../../../../usr/local/Cellar/freeglut/3.0.0/lib/libglut.a; sourceTree = "<group>"; };
-		C9C494D91FB5CB3200D869ED /* Arch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Arch.txt; sourceTree = "<group>"; };
-		C9C494DA1FB5D2AE00D869ED /* ArchOrigin.pcd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ArchOrigin.pcd; sourceTree = "<group>"; };
 		C9C494DB1FB5E44C00D869ED /* libvtkInfovisBoostGraphAlgorithmsTCL-8.0.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libvtkInfovisBoostGraphAlgorithmsTCL-8.0.1.dylib"; path = "../../../../../../usr/local/Cellar/vtk/8.0.1/lib/libvtkInfovisBoostGraphAlgorithmsTCL-8.0.1.dylib"; sourceTree = "<group>"; };
 		C9C494DC1FB5E44C00D869ED /* libvtkFiltersFlowPaths-8.0.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libvtkFiltersFlowPaths-8.0.1.dylib"; path = "../../../../../../usr/local/Cellar/vtk/8.0.1/lib/libvtkFiltersFlowPaths-8.0.1.dylib"; sourceTree = "<group>"; };
 		C9C494DD1FB5E44C00D869ED /* libvtkIOEnSightTCL-8.0.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libvtkIOEnSightTCL-8.0.1.dylib"; path = "../../../../../../usr/local/Cellar/vtk/8.0.1/lib/libvtkIOEnSightTCL-8.0.1.dylib"; sourceTree = "<group>"; };
@@ -1242,7 +1234,6 @@
 				C9A0BB5D1FB8490A0099F336 /* libpcl_octree.1.8.1.dylib in Frameworks */,
 				C9A0BB5B1FB8490A0099F336 /* libpcl_outofcore.1.8.1.dylib in Frameworks */,
 				C9A0BB501FB8490A0099F336 /* libpcl_people.1.8.1.dylib in Frameworks */,
-				C9A0BB591FB8490A0099F336 /* pkgconfig in Frameworks */,
 				C9A0BB651FB8490A0099F336 /* libpcl_recognition.1.8.1.dylib in Frameworks */,
 				C9A0BB4F1FB8490A0099F336 /* libpcl_registration.1.8.1.dylib in Frameworks */,
 				C9A0BB661FB8490A0099F336 /* libpcl_sample_consensus.1.8.1.dylib in Frameworks */,
@@ -1505,8 +1496,6 @@
 				C9A0BB341FB821C50099F336 /* libvtkViewsInfovisPython27D-8.0.1.dylib in Frameworks */,
 				C9A0BB351FB821C50099F336 /* libvtkViewsInfovisTCL-8.0.1.dylib in Frameworks */,
 				C9A0BB361FB821C50099F336 /* libvtkWrappingPython27Core-8.0.1.dylib in Frameworks */,
-				C9A0B8ED1FB7698A0099F336 /* libglfw.3.2.dylib in Frameworks */,
-				C9C499EA1FB74F8000D869ED /* OpenGL.framework in Frameworks */,
 				C9C499E91FB749F400D869ED /* libpcl_visualization.1.8.1.dylib in Frameworks */,
 				C9C4995E1FB7486D00D869ED /* libpcl_common.1.8.1.dylib in Frameworks */,
 				C9C4995C1FB739C300D869ED /* libvtkWrappingTools-8.0.a in Frameworks */,
@@ -1516,7 +1505,6 @@
 				C9C499171FB6F87900D869ED /* libboost_system.a in Frameworks */,
 				C9C4979F1FB5F36500D869ED /* libboost_math_c99f.a in Frameworks */,
 				C9C494D81FB5C8E800D869ED /* libglut.a in Frameworks */,
-				C9C494D61FB5C62300D869ED /* GLUT.framework in Frameworks */,
 				C9C4946E1FB5C58500D869ED /* libpcl_filters.1.8.1.dylib in Frameworks */,
 				C9C494711FB5C58500D869ED /* libpcl_segmentation.1.8.1.dylib in Frameworks */,
 				C9C494761FB5C58500D869ED /* libpcl_octree.1.8.1.dylib in Frameworks */,
@@ -1530,6 +1518,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C994BC5A1FC805F600022E4D /* HeaderFile */ = {
+			isa = PBXGroup;
+			children = (
+				C9C494541FB5BB1900D869ED /* CreatePCDFromTxt.hpp */,
+				C9AA64DC1FBB28A70082CE05 /* ExtractPlanes.hpp */,
+				C95192D71FBC6EE500B4FF7D /* GetBoundaryOriginal.hpp */,
+				C9F498151FC44CD900D567A9 /* Filters.hpp */,
+			);
+			name = HeaderFile;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		C9D6A13A1FB02C29004145A3 = {
 			isa = PBXGroup;
 			children = (
@@ -1551,18 +1551,12 @@
 		C9D6A1451FB02C29004145A3 /* PoinCloudDebug */ = {
 			isa = PBXGroup;
 			children = (
-				C9A0B8EE1FB781650099F336 /* glad.c */,
-				C9C494DA1FB5D2AE00D869ED /* ArchOrigin.pcd */,
-				C9C494D91FB5CB3200D869ED /* Arch.txt */,
+				C994BC5A1FC805F600022E4D /* HeaderFile */,
 				C9C494531FB5BB1900D869ED /* CreatePCDFromTxt.cpp */,
-				C9C494541FB5BB1900D869ED /* CreatePCDFromTxt.hpp */,
 				C9D6A1461FB02C29004145A3 /* main.cpp */,
 				C9AA64DB1FBB28A70082CE05 /* ExtractPlanes.cpp */,
-				C9AA64DC1FBB28A70082CE05 /* ExtractPlanes.hpp */,
 				C95192D61FBC6EE500B4FF7D /* GetBoundaryOriginal.cpp */,
-				C95192D71FBC6EE500B4FF7D /* GetBoundaryOriginal.hpp */,
 				C9F498141FC44CD900D567A9 /* Filters.cpp */,
-				C9F498151FC44CD900D567A9 /* Filters.hpp */,
 			);
 			path = PoinCloudDebug;
 			sourceTree = "<group>";
@@ -2533,7 +2527,6 @@
 				C95192D81FBC6EE500B4FF7D /* GetBoundaryOriginal.cpp in Sources */,
 				C9F498161FC44CD900D567A9 /* Filters.cpp in Sources */,
 				C9D6A1471FB02C29004145A3 /* main.cpp in Sources */,
-				C9A0B8EF1FB781650099F336 /* glad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2657,7 +2650,7 @@
 					/usr/local/opt/boost/include,
 					"/usr/local/opt/vtk/include/vtk-8.0",
 					/usr/local/opt/opencv/include,
-					"/usr/local/opt/glfw@3/include/GLFW",
+					./HeaderFile,
 					/usr/local/opt/glad/include,
 					/usr/local/opt/glew/include,
 					/usr/local/opt/flann/include,
@@ -2695,7 +2688,7 @@
 					/usr/local/opt/boost/include,
 					"/usr/local/opt/vtk/include/vtk-8.0",
 					/usr/local/opt/opencv/include,
-					"/usr/local/opt/glfw@3/include/GLFW",
+					./HeaderFile,
 					/usr/local/opt/glad/include,
 					/usr/local/opt/glew/include,
 					/usr/local/opt/flann/include,

@@ -16,20 +16,16 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr bilateralFilter(pcl::PointCloud<pcl::PointXY
     pcl::PointCloud<pcl::PointXYZI>::Ptr cloudFiltered(new pcl::PointCloud<pcl::PointXYZI>);
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud3(new pcl::PointCloud<pcl::PointXYZ>);
     pcl::search::KdTree<pcl::PointXYZI>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZI>);
-//    pcl::KdTreeFLANN<pcl::PointXYZI>::Ptr tree(new pcl::KdTreeFLANN<pcl::PointXYZI>);
     pcl::BilateralFilter<pcl::PointXYZI> bf;
     
     pcl::copyPointCloud(*cloud, *cloud2);
     cout << "Converted To PointXYZI" << endl;
     
     bf.setInputCloud(cloud2);
-    cout << "Set Cloud Done" << endl;
     bf.setSearchMethod(tree);
-    cout << "Set Tree Done" << endl;
     bf.setHalfSize(s);
-    cout << "Set SigmaS Done" << endl;
     bf.setStdDev(r);
-    cout << "Set SigmaR Done" << endl;
+    cout << "Set Params Done" << endl;
     bf.filter(*cloudFiltered);
     cout << "Filtered" << endl;
     
@@ -71,5 +67,5 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr gaussianKernelFilter(pcl::PointCloud<pcl::Po
     convolution.convolve(*output);
     cout << "Convoluted" << endl;
     
-    return output
+    return output;
 }

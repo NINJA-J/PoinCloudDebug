@@ -17,7 +17,6 @@ pcl::PointCloud<pcl::Boundary> getBoundary(pcl::PointCloud<pcl::PointXYZ>::Ptr &
     pcl::PointCloud<pcl::Normal>::Ptr normals(new pcl::PointCloud<pcl::Normal>());
     pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>());
     normEst.setInputCloud(cloud);
-//    normEst.setRadiusSearch(radius);
     normEst.setKSearch(10);
     normEst.compute(*normals);
     
@@ -25,7 +24,6 @@ pcl::PointCloud<pcl::Boundary> getBoundary(pcl::PointCloud<pcl::PointXYZ>::Ptr &
     
     boundEst.setInputCloud(cloud);
     boundEst.setInputNormals(normals);
-//    boundEst.setRadiusSearch(radius);
     boundEst.setAngleThreshold(angleThreshold);
     boundEst.setSearchMethod(tree);
     boundEst.setKSearch(kSearch);
@@ -36,17 +34,22 @@ pcl::PointCloud<pcl::Boundary> getBoundary(pcl::PointCloud<pcl::PointXYZ>::Ptr &
     return boundaries;
 }
 
-pcl::PointCloud<pcl::PointXYZ>::Ptr extractBoundary(pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud, pcl::PointCloud<pcl::Boundary> &boundary){
+pcl::PointCloud<pcl::PointXYZ>::Ptr extractBoundary(pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud, pcl::PointCloud<pcl::Boundary> &boundary, bool extBoundary){
     pcl::PointCloud<pcl::PointXYZ>::Ptr bound(new pcl::PointCloud<pcl::PointXYZ>());
-    for(int i=0;i<boundary.points.size();i++){
-        if(static_cast<int>(boundary.points[i].boundary_point)!=0)
-            bound->points.push_back(cloud->points[i]);
+    for( int i = 0; i < boundary.points.size(); i++ ){
+        int temp = static_cast<int>( boundary.points[i].boundary_point );
+        if( extBoundary ) {
+            if( temp != 0 ) bound->points.push_back(cloud->points[i]);
+        } else {
+            if( temp == 0 ) bound->points.push_back(cloud->points[i]);
+        }
     }
     bound->width = bound->points.size();
     bound->height = 1;
     double percentage = (double)boundary.points.size()/(double)cloud->points.size()*100;
     int bPoints = bound->width;
     int oPoints = cloud->points.size();
-    cout<<bPoints<<"/"<<oPoints<<" Boundary Points Extracted From Original Cloud"<<endl;
+    cout << bPoints << "/"<< oPoints << " Boundary Points Extracted From Original Cloud";
+    cout << endl;
     return bound;
 }
