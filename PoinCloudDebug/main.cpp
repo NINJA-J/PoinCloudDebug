@@ -14,6 +14,7 @@
 //http://blog.csdn.net/jiaojialulu/article/details/69351034
 
 #include <iostream>
+#include <sstream>
 #include <fstream>
 #include <string>
 #include <pcl/io/io.h>
@@ -30,42 +31,62 @@
 
 using namespace std;
 
-void savePCDFile(pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud, string fName){
-    pcl::io::savePCDFile( "./PCD/"     + fName + ".pcd", *cloud, true);
-    ofstream fout("./PCD2TXT/" + fName + ".txt");
+void savePCDFile(pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud, string dir, string fName){
+    pcl::io::savePCDFile( "./" + dir + "/PCD/" + fName + ".pcd", *cloud, true);
+    ofstream fout(        "./" + dir + "/TXT/" + fName + ".txt" );
     vector<pcl::PointXYZ>::iterator iter = cloud->points.begin();
     while( iter != cloud->points.end() ){
         fout << iter->x << " " << iter->y << " " << iter->z << endl;
         iter ++;
     }
-    cout << "File " + fName + "PCD & TXT mode saved" << endl;
+    cout << "File " + fName + " PCD & TXT Mode Saved In " + dir + " Folder" << endl;
+}
+
+void savePCDFile(pcl::PointCloud<pcl::PointXYZ>::Ptr &cloud, string fName){
+    savePCDFile(cloud, "Origin", fName);
 }
 
 pcl::PointCloud<pcl::PointXYZ>::Ptr myPc(new pcl::PointCloud<pcl::PointXYZ>);
 pcl::PointCloud<pcl::PointXYZ>::Ptr VGF_Cloud;
 pcl::PointCloud<pcl::PointXYZ>::Ptr GF_Cloud;
 pcl::PointCloud<pcl::PointXYZ>::Ptr VGF_GF_Cloud;
+pcl::PointCloud<pcl::PointXYZ>::Ptr SubCloud(new pcl::PointCloud<pcl::PointXYZ>);
 
-vector<int> indices;
+pcl::PointIndices::Ptr inliers( new pcl::PointIndices );
 
 int main(int argc, const char * argv[]) {
+    double xMin = 80.2438;
+    double xMax = 82.6;
+    double yMin = 98.2886;
+    double yMax = 100.48;
     
-    pcl::io::loadPCDFile("PCD/ArchOrigin.pcd", *myPc);
-    savePCDFile( myPc, "ArchOrigin" );
-    cout << "Source PCD File Loaded" << endl;
+    pcl::io::loadPCDFile("Origin/PCD/ArchOrigin.pcd", *myPc);
+    cout << myPc->points.size() << " Points Loaded" <<endl;
     
-    VGF_Cloud = voxelGridFilter(myPc, 0.01, 0.01, 0.01);
-    cout << "原始点云-栅格过滤 结束" << endl;
-    
-    GF_Cloud = gaussianKernelFilter(myPc, 4, 3);
-    cout << "原始点云-高斯滤波 结束" << endl;
-    
-    VGF_GF_Cloud = gaussianKernelFilter(VGF_Cloud, 4, 3);
-    cout << "原始点云-栅格过滤-高斯滤波 结束" << endl;
-    
-    savePCDFile( VGF_Cloud,    "ArchVGF_0.01_0.01_0.01" );
-    savePCDFile( GF_Cloud,     "ArchGF_4_3" );
-    savePCDFile( VGF_GF_Cloud, "ArchVGF_GF_4_3");
+    vector<pcl::PointXYZ>::iterator iter = myPc->points.begin();
+    while( iter != myPc->points.end() ){
+        if( xMin <= iter->x && iter->x <= xMax && yMin <= iter->y && iter->y <= yMax )
+            SubCloud->points.push_back(*iter);
+        iter++;
+    }
+    SubCloud->width = SubCloud->points.size();
+    SubCloud->height = 1;
+    cout << "Extract " << SubCloud->width << " Points From The Box" << endl;
+    savePCDFile( SubCloud, "SubPart1", "Origin" );
+//    cout << "Source PCD File Loaded" << endl;
+//
+//    VGF_Cloud = voxelGridFilter(myPc, 0.01, 0.01, 0.01);
+//    cout << "原始点云-栅格过滤 结束" << endl;
+//
+//    GF_Cloud = gaussianKernelFilter(myPc, 4, 3);
+//    cout << "原始点云-高斯滤波 结束" << endl;
+//
+//    VGF_GF_Cloud = gaussianKernelFilter(VGF_Cloud, 4, 3);
+//    cout << "原始点云-栅格过滤-高斯滤波 结束" << endl;
+//
+//    savePCDFile( VGF_Cloud,    "ArchVGF_0.01_0.01_0.01" );
+//    savePCDFile( GF_Cloud,     "ArchGF_4_3" );
+//    savePCDFile( VGF_GF_Cloud, "ArchVGF_GF_4_3");
     return 0;
     
 //    myPc = bCloud;

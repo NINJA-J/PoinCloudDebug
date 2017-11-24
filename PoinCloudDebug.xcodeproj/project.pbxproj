@@ -317,7 +317,6 @@
 
 /* Begin PBXFileReference section */
 		C95192D61FBC6EE500B4FF7D /* GetBoundaryOriginal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GetBoundaryOriginal.cpp; sourceTree = "<group>"; };
-		C95192D71FBC6EE500B4FF7D /* GetBoundaryOriginal.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GetBoundaryOriginal.hpp; sourceTree = "<group>"; };
 		C97092F91FB2ABDA001A2EE0 /* libboost_system-mt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libboost_system-mt.a"; path = "../../../../../../usr/local/Cellar/boost/1.65.1/lib/libboost_system-mt.a"; sourceTree = "<group>"; };
 		C97092FA1FB2ABDA001A2EE0 /* libboost_system.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost_system.a; path = ../../../../../../usr/local/Cellar/boost/1.65.1/lib/libboost_system.a; sourceTree = "<group>"; };
 		C97092FD1FB2AC88001A2EE0 /* libpcl_visualization.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_visualization.1.8.1.dylib; path = ../../../../../../usr/local/Cellar/pcl/1.8.1/lib/libpcl_visualization.1.8.1.dylib; sourceTree = "<group>"; };
@@ -348,6 +347,10 @@
 		C97093171FB2AD29001A2EE0 /* libvtkCommonComputationalGeometryTCL-8.0.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libvtkCommonComputationalGeometryTCL-8.0.1.dylib"; path = "../../../../../../usr/local/Cellar/vtk/8.0.1/lib/libvtkCommonComputationalGeometryTCL-8.0.1.dylib"; sourceTree = "<group>"; };
 		C97093181FB2AD2A001A2EE0 /* libvtkCommonCoreTCL-8.0.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libvtkCommonCoreTCL-8.0.1.dylib"; path = "../../../../../../usr/local/Cellar/vtk/8.0.1/lib/libvtkCommonCoreTCL-8.0.1.dylib"; sourceTree = "<group>"; };
 		C97093191FB2AD2A001A2EE0 /* libvtkCommonExecutionModelPython27D-8.0.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libvtkCommonExecutionModelPython27D-8.0.1.dylib"; path = "../../../../../../usr/local/Cellar/vtk/8.0.1/lib/libvtkCommonExecutionModelPython27D-8.0.1.dylib"; sourceTree = "<group>"; };
+		C9946EB71FC81B1C006D83C1 /* GetBoundaryOriginal.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GetBoundaryOriginal.hpp; path = PoinCloudDebug/HeaderFile/GetBoundaryOriginal.hpp; sourceTree = SOURCE_ROOT; };
+		C9946EB81FC81B1C006D83C1 /* Filters.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Filters.hpp; path = PoinCloudDebug/HeaderFile/Filters.hpp; sourceTree = SOURCE_ROOT; };
+		C9946EB91FC81B1D006D83C1 /* CreatePCDFromTxt.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CreatePCDFromTxt.hpp; path = PoinCloudDebug/HeaderFile/CreatePCDFromTxt.hpp; sourceTree = SOURCE_ROOT; };
+		C9946EBA1FC81B1D006D83C1 /* ExtractPlanes.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ExtractPlanes.hpp; path = PoinCloudDebug/HeaderFile/ExtractPlanes.hpp; sourceTree = SOURCE_ROOT; };
 		C9950E5B1FB5A20300F00BBF /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = System/Library/Frameworks/OpenCL.framework; sourceTree = SDKROOT; };
 		C99A49711FB4415C00E358C0 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		C99A49721FB4415C00E358C0 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
@@ -668,9 +671,7 @@
 		C9A0BB4D1FB8490A0099F336 /* libpcl_recognition.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_recognition.1.8.1.dylib; path = ../../../../../../usr/local/Cellar/pcl/1.8.1_1/lib/libpcl_recognition.1.8.1.dylib; sourceTree = "<group>"; };
 		C9A0BB4E1FB8490A0099F336 /* libpcl_sample_consensus.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_sample_consensus.1.8.1.dylib; path = ../../../../../../usr/local/Cellar/pcl/1.8.1_1/lib/libpcl_sample_consensus.1.8.1.dylib; sourceTree = "<group>"; };
 		C9AA64DB1FBB28A70082CE05 /* ExtractPlanes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ExtractPlanes.cpp; sourceTree = "<group>"; };
-		C9AA64DC1FBB28A70082CE05 /* ExtractPlanes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ExtractPlanes.hpp; sourceTree = "<group>"; };
 		C9C494531FB5BB1900D869ED /* CreatePCDFromTxt.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CreatePCDFromTxt.cpp; sourceTree = "<group>"; };
-		C9C494541FB5BB1900D869ED /* CreatePCDFromTxt.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CreatePCDFromTxt.hpp; sourceTree = "<group>"; };
 		C9C494561FB5C58200D869ED /* libpcl_tracking.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_tracking.1.8.1.dylib; path = ../../../../../../usr/local/Cellar/pcl/1.8.1/lib/libpcl_tracking.1.8.1.dylib; sourceTree = "<group>"; };
 		C9C494571FB5C58200D869ED /* libpcl_surface.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_surface.1.8.1.dylib; path = ../../../../../../usr/local/Cellar/pcl/1.8.1/lib/libpcl_surface.1.8.1.dylib; sourceTree = "<group>"; };
 		C9C494581FB5C58200D869ED /* libpcl_filters.1.8.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpcl_filters.1.8.1.dylib; path = ../../../../../../usr/local/Cellar/pcl/1.8.1/lib/libpcl_filters.1.8.1.dylib; sourceTree = "<group>"; };
@@ -1215,7 +1216,6 @@
 		C9D6A1461FB02C29004145A3 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C9D6A1511FB045C2004145A3 /* libvtkWrappingTools-8.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libvtkWrappingTools-8.0.a"; path = "../../../../../../usr/local/Cellar/vtk/8.0.1/lib/libvtkWrappingTools-8.0.a"; sourceTree = "<group>"; };
 		C9F498141FC44CD900D567A9 /* Filters.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Filters.cpp; sourceTree = "<group>"; };
-		C9F498151FC44CD900D567A9 /* Filters.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Filters.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1521,10 +1521,10 @@
 		C994BC5A1FC805F600022E4D /* HeaderFile */ = {
 			isa = PBXGroup;
 			children = (
-				C9C494541FB5BB1900D869ED /* CreatePCDFromTxt.hpp */,
-				C9AA64DC1FBB28A70082CE05 /* ExtractPlanes.hpp */,
-				C95192D71FBC6EE500B4FF7D /* GetBoundaryOriginal.hpp */,
-				C9F498151FC44CD900D567A9 /* Filters.hpp */,
+				C9946EB91FC81B1D006D83C1 /* CreatePCDFromTxt.hpp */,
+				C9946EBA1FC81B1D006D83C1 /* ExtractPlanes.hpp */,
+				C9946EB81FC81B1C006D83C1 /* Filters.hpp */,
+				C9946EB71FC81B1C006D83C1 /* GetBoundaryOriginal.hpp */,
 			);
 			name = HeaderFile;
 			path = "New Group";
